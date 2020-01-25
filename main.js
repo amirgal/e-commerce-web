@@ -17,26 +17,25 @@ aboutUsButton.onclick = () => {
 
 allProductsButton.onclick = () => {
     container.innerHTML = ''
-    // const subContainer = document.createElement('div')
-    // container.appendChild(subContainer)
-    // subContainer.id = "all-products-container"
-    addProductsToContainer()
+    const allProductsArray = products.getAllProducts()
+    addProductsToContainer(allProductsArray)
+}
+cartButton.onclick = () => {
+    container.innerHTML = ''
+    const cartItemsArray = cart.getCart()
+    addProductsToContainer(cartItemsArray)
 }
 
-const addProductsToContainer = () => {
-    const productsArray = products.getAllProducts()
+const addProductsToContainer = (array) => {
     const subContainer = document.createElement('div')
     container.appendChild(subContainer)
-    subContainer.id = "all-products-container"
+    subContainer.id = "items-container"
     
-    // let i = 1
-    for (let product of productsArray) {
+    for (let product of array) {
         const newDiv = document.createElement('div')
         subContainer.appendChild(newDiv)
-        // newDiv.id = "product"+i
         newDiv.className = "product"
         newDiv.innerHTML = `${product.name}  Price: ${product.price}`
-        // i++
         const newIMG = document.createElement('img')
         newDiv.appendChild(newIMG)
         newIMG.src = product.img
