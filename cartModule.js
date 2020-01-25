@@ -18,15 +18,6 @@ const Cart = () => {
         _cartArray.push(product)
     }
 
-    // const deleteFromCart = (name) => {
-    //     for (let i in _cartArray) {
-    //         if(_cartArray[i].name === name) {
-    //             _cartArray.splice(i,1)
-    //             return
-    //         }
-    //     }
-    // }
-
     const deleteFromCart = (product) => {
         const i =_cartArray.indexOf(product)
         _cartArray.splice(i,1)

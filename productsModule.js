@@ -35,6 +35,35 @@ const Products = () => {
             name: 'OnePlus 7T 128GB 8GB RAM',
             price: 2157,
             img: "https://img.zap.co.il/pics/0/8/0/2/52682080b.gif"
+        },
+
+        {
+            name: 'Xiaomi Redmi 8 64GB',
+            price: 472,
+            img: "https://img.zap.co.il/pics/7/6/4/2/52432467b.gif"
+        },
+        {
+            name: 'Apple iPhone XS Max 64GB',
+            price: 3288,
+            img: "https://img.zap.co.il/pics/0/1/7/1/48061710b.gif"
+        },
+
+        {
+            name: 'Xiaomi Mi 9 Lite 128GB 6GB RAM',
+            price: 1052,
+            img: "https://img.zap.co.il/pics/6/1/3/7/52227316b.gif"
+        },
+
+        {
+            name: 'Xiaomi Mi Play 64GB 4GB RAM',
+            price: 699,
+            img: "https://img.zap.co.il/pics/1/2/1/7/50697121b.gif"
+        },
+
+        {
+            name: 'Apple iPhone 11 Pro 256GB',
+            price: 4592,
+            img: "https://img.zap.co.il/pics/0/2/2/2/52192220b.gif"
         }
 
     ]
