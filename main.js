@@ -52,7 +52,7 @@ const addProductsToContainer = (array,buttonText) => {
         } else {
             prodButton.onclick = () => {
                 cart.deleteFromCart(product)
-                                                  
+                cartButton.onclick()
             }
         }
     }
