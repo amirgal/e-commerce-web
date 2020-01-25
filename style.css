@@ -49,14 +49,15 @@ body {
     margin-left: 80px;
     margin-right: 80px;
     display: grid;
-    grid-template-columns: 3;
-    grid-template-rows: 2;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;              /*added*/
 }
 
 .product {
-    /* display: inline-block; */
-    gap: 10px;
-    
+    display: grid;
+    justify-items: center;     /*added*/
+    margin-bottom: 30px;
+    gap: 20px;               /*added*/
 }
 
 .product-picture {

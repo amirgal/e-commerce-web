@@ -1,5 +1,7 @@
 const products = Products()
 const cart = Cart()
+const cartItemsArray = cart.getCart()
+const allProductsArray = products.getAllProducts()
 
 const buttons = document.getElementsByClassName('button')
 const aboutUsButton = buttons[0]
@@ -17,16 +19,16 @@ aboutUsButton.onclick = () => {
 
 allProductsButton.onclick = () => {
     container.innerHTML = ''
-    const allProductsArray = products.getAllProducts()
-    addProductsToContainer(allProductsArray)
+    const buttonText = 'Add To Cart'
+    addProductsToContainer(allProductsArray,buttonText)
 }
 cartButton.onclick = () => {
     container.innerHTML = ''
-    const cartItemsArray = cart.getCart()
-    addProductsToContainer(cartItemsArray)
+    const buttonText = 'Remove From Cart'
+    addProductsToContainer(cartItemsArray,buttonText)
 }
 
-const addProductsToContainer = (array) => {
+const addProductsToContainer = (array,buttonText) => {
     const subContainer = document.createElement('div')
     container.appendChild(subContainer)
     subContainer.id = "items-container"
@@ -35,10 +37,24 @@ const addProductsToContainer = (array) => {
         const newDiv = document.createElement('div')
         subContainer.appendChild(newDiv)
         newDiv.className = "product"
-        newDiv.innerHTML = `${product.name}  Price: ${product.price}`
-        const newIMG = document.createElement('img')
-        newDiv.appendChild(newIMG)
-        newIMG.src = product.img
-        newIMG.className = "product-picture"
+        newDiv.innerHTML = `${product.name} <br> Price: ${product.price}`
+        const prodIMG = document.createElement('img')
+        newDiv.appendChild(prodIMG)
+        prodIMG.src = product.img
+        prodIMG.className = "product-picture"
+        const prodButton = document.createElement('button')
+        prodButton.innerHTML = buttonText
+        newDiv.appendChild(prodButton)
+        if(buttonText === 'Add To Cart') {
+            prodButton.onclick = () => {
+                cart.addToCart(product)
+            }
+        } else {
+            prodButton.onclick = () => {
+                cart.deleteFromCart(product)
+
+            }
+        }
     }
 }
+

@@ -39,19 +39,19 @@ const Products = () => {
 
     ]
 
-    const getProduct = (name) => {
-        for(let product of _products) {
-            if(product.name === name){
-                return product
-            }
-        }
-    }
+    // const getProduct = (name) => {
+    //     for(let product of _products) {
+    //         if(product.name === name){
+    //             return product
+    //         }
+    //     }
+    // }
 
     const getAllProducts = () => {
         return _products
     }
 
-    return {getProduct, getAllProducts}
+    return {/*getProduct,*/ getAllProducts}
 
 }
 
