@@ -52,7 +52,8 @@ const addProductsToContainer = (array,buttonText) => {
         } else {
             prodButton.onclick = () => {
                 cart.deleteFromCart(product)
-
+                                                //Need to reload the cart page here. 
+                                                //might need a different loading function instead of the addProductsToContainer
             }
         }
     }
